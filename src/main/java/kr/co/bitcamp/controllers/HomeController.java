@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 /**
- * Handles requests for the application home page.
  */
 @Controller
 @SessionAttributes({"context","css","javascript","image"})
@@ -32,6 +31,8 @@ public class HomeController {
 	public String home(HttpSession session, HttpServletRequest request) {
 		session.setAttribute("context", request.getContextPath());
 		session.setAttribute("javascript", request.getContextPath()+"/resources/js");
+		session.setAttribute("css", request.getContextPath()+"/resources/css");
+		session.setAttribute("image", request.getContextPath()+"/resources/img");
 		return "main/Home.tiles";
 	}
 	@GetMapping("/location/{dir}/{page}")

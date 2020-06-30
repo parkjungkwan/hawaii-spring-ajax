@@ -5,3 +5,4 @@ function Session(x){
 	sessionStorage.setItem('css', x+'/resources/css')
 	sessionStorage.setItem('image', x+'/resources/img')
 }
+

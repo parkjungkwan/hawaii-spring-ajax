@@ -1,6 +1,7 @@
 var person = person || {}
 person = (function(){
 	let _, javascript, session
+	
 	let init = function(){
 		 _ = sessionStorage.getItem('context'),
 		 javascript = sessionStorage.getItem('javascript'),
@@ -14,10 +15,14 @@ person = (function(){
 			dataType: 'json',
 			contentType: 'application/json; charset=UTF-8',
 			success: function(res){
-				location.href = _+`/location/person/LoginForm`
+				if(res === 'SUCCESS'){
+					location.href = _+`/location/person/LoginForm`
+				}else{
+					location.href = _+`/location/person/JoinForm`
+				}
 			},
 			error: function(err){
-				location.href = _+`/location/person/JoinForm`
+				
 			}
 		})
 	}

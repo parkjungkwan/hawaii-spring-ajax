@@ -5,6 +5,6 @@ app = (()=>{
 })();
 function init(x){
 	$.getScript(x+'/resources/js/session.js', ()=>{
-		$.extend(new Session(x))
+		new Session(x)
 	})
 }
