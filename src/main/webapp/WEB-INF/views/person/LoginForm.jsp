@@ -12,13 +12,13 @@
     <label for="Password"><b>Password</b></label>
     <input id="password" type="password" placeholder="Enter Password" name="password" required>
 
-    <!-- <label for="psw-repeat"><b>Repeat Password</b></label>
+    <label for="psw-repeat"><b>Repeat Password</b></label>
     <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
      
     <label>
       <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
     </label>
-    -->
+    
     <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
 
     <div class="clearfix">
@@ -27,7 +27,7 @@
     </div>
   </div>
 </form>
-<script src="${js}/store/person.js"></script>
+<script src="${javascript}/store/person.js"></script>
 <script>
 document.getElementById('signup_btn').addEventListener('click',function(e){
 	e.preventDefault()

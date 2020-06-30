@@ -1,8 +1,10 @@
 var person = person || {}
 person = (function(){
-	let _
+	let _, javascript, session
 	let init = function(){
-		 _ = sessionStorage.getItem('context')
+		 _ = sessionStorage.getItem('context'),
+		 javascript = sessionStorage.getItem('javascript'),
+		 session = sessionStorage.getItem('session')
 	}
 	let join = function(payload){
 		$.ajax({
@@ -15,7 +17,7 @@ person = (function(){
 				location.href = _+`/location/person/LoginForm`
 			},
 			error: function(err){
-				alert(err)
+				location.href = _+`/location/person/JoinForm`
 			}
 		})
 	}
@@ -40,7 +42,17 @@ person = (function(){
 		sessionStroage.removeItem('javascript')
 		sessionStroage.removeItem('css')
 		sessionStroage.removeItem('image')
+		location.href = _+`/`
 	}
-	return {init, join, login, logout}
+	let remove = function(){
+		$.ajax()
+		sessionStroage.removeItem('userid')
+		sessionStroage.removeItem('context')
+		sessionStroage.removeItem('javascript')
+		sessionStroage.removeItem('css')
+		sessionStroage.removeItem('image')
+		location.href = _+`/`
+	}
+	return {init, join, login, logout, remove}
 })()
 

@@ -27,7 +27,7 @@
     </div>
   </div>
 </form>
-<script src="${js}/store/person.js"></script>
+<script src="${javascript}/store/person.js"></script>
 <script>
 document.getElementById('signup_btn').addEventListener('click',function(e){
 	e.preventDefault()

@@ -6,12 +6,16 @@ PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
     <!-- main page -->
     <definition name="public" template="/WEB-INF/views/layouts/Public.jsp">
     	<put-attribute name="header" value="/WEB-INF/views/common/Header.jsp"/>
-    	<put-attribute name="navigator" value="/WEB-INF/views/common/Navigator.jsp"/>
     	<put-attribute name="jumbotron" value="/WEB-INF/views/main/Jumbotron.jsp"/>
     	<put-attribute name="content" value=""/>
     	<put-attribute name="footer" value="/WEB-INF/views/common/Footer.jsp"/>
     </definition>
     <definition name="*/*.tiles" extends="public">
+    	<put-attribute name="navigator" value="/WEB-INF/views/common/Navigator.jsp"/>
+    	<put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp"/>
+    </definition>
+    <definition name="user:*/*.tiles" extends="public">
+    	<put-attribute name="navigator" value="/WEB-INF/views/common/UserNavigator.jsp"/>
     	<put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp"/>
     </definition>
     <!-- 노타일즈 -->
