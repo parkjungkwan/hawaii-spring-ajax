@@ -27,8 +27,7 @@
 <script>
 $('#a_join').click(function(e){
 	e.preventDefault()
-	alert('${ctx}/user/join')
-	location.href = `${ctx}/user/join`
+	location.href = `${context}/location/person/JoinForm`
 })
 </script>
 

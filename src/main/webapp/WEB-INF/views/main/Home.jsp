@@ -42,5 +42,5 @@
   </div>
 </div><br><br>
 <script>
-app.init("${ctx}")
+app.init("${context}")
 </script>

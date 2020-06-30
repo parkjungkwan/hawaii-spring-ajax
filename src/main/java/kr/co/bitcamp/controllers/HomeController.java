@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
@@ -21,7 +22,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
  * Handles requests for the application home page.
  */
 @Controller
-@SessionAttributes({"ctx","css","js","img"})
+@SessionAttributes({"context","css","javascript","image"})
 public class HomeController {
 	@Autowired HttpSession session;
 	@Autowired HttpServletRequest request;
@@ -29,14 +30,14 @@ public class HomeController {
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	@GetMapping("/")
 	public String home(HttpSession session, HttpServletRequest request) {
-		session.setAttribute("ctx", request.getContextPath());
-		session.setAttribute("js", request.getContextPath()+"/resources/js");
+		session.setAttribute("context", request.getContextPath());
+		session.setAttribute("javascript", request.getContextPath()+"/resources/js");
 		return "main/Home.tiles";
 	}
-	@GetMapping("/user/join")
-	public String userJoin() {
-		logger.info("** UserJoin {}.", "Enter");
-		return "person/JoinForm.jsp";
+	@GetMapping("/location/{dir}/{page}")
+	public String move(@PathVariable("dir") String dir,
+			@PathVariable("page") String page) {
+		return String.format("%s/%s.jsp", dir, page);
 	}
 	
 }
