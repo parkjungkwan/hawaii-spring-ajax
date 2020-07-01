@@ -1,9 +1,8 @@
 package kr.co.bitcamp.services;
 
-import java.sql.Date;
+import java.util.Date;
 
 import org.springframework.stereotype.Component;
-
 import kr.co.bitcamp.domains.Person;
 @Component
 public interface PersonService {
@@ -18,7 +17,7 @@ public interface PersonService {
 	 public void findByCreatedAtBetween(Date fromDate, Date toDate);
 	 public void findByAgeGraterThanEqual(int age);
 	 public void findByNameLike(String name);
-	 public void findByJobIsNull();
-	 public void findByJob(String jobs);
+	 public void findByAccessCodeIsNull();
+	 public void findByGenerLike(String gender);
 	 public void findByEmailOrderByNameAsc(String email);
 }

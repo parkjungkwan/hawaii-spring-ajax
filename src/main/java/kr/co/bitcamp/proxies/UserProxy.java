@@ -1,5 +1,6 @@
 package kr.co.bitcamp.proxies;
 
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -7,13 +8,18 @@ import java.util.function.BiFunction;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
+import kr.co.bitcamp.domains.Person;
+import kr.co.bitcamp.enums.Sql;
+import kr.co.bitcamp.mappers.PersonMapper;
 import kr.co.bitcamp.mappers.TxMapper;
 
 @Component("manager")
 public class UserProxy extends Proxy {
-	@Autowired
-	TxMapper txMapper;
+	@Autowired TxMapper txMapper;
+	@Autowired PersonMapper personMapper;
+	@Autowired Box<String> box;
 
 	public String makeBirthday() {
 		String birthday = "";
@@ -75,5 +81,32 @@ public class UserProxy extends Proxy {
 		String fullname = fname.get(0) + name.get(0) + name.get(1);
 		return fullname;
 	}
+	
+	public Person makeUser() {
+		return new Person(makeUserid(), makeUsername(), "1", 
+				makeBirthday(), makeGender(), makeTelephone(), "2020", "" );
+	}
+	@Transactional
+	public void insertUsers(int count) {
+		for(int i = 0; i< count; i++) {
+			txMapper.insertUser(makeUser());
+		}
+	}
+	public void truncatePersons() {
+		box.clear();
+		box.put("TRUNCATE_PERSONS", Sql.TRUNCATE_PERSONS.toString());
+		personMapper.truncatePerson(box.get());
+		
+	}
 
 }
+
+
+
+
+
+
+
+
+
+
