@@ -1,4 +1,4 @@
-package kr.co.bitcamp.tx;
+package kr.co.bitcamp.mappers;
 
 import org.apache.ibatis.annotations.Insert;
 import org.springframework.stereotype.Repository;

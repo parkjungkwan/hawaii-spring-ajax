@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Component
-public class Image {
-	private int imageSeq;
-	private String image;
+public class FileHandler {
+	private int fileNumber;
+	private String fileName;
 }

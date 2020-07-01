@@ -8,6 +8,6 @@ import lombok.Data;
 @Data
 @Component
 public class Article {
-	private int artSeq, imageSeq;
-	private String userid, comments, message, rating, boardType, title, content; 
+	private int articleNumber, fileNumber;
+	private String userid, comment, message, rating, boardtype, title, content; 
 }

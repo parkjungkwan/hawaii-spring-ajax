@@ -8,7 +8,7 @@ import java.util.function.BiFunction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import kr.co.bitcamp.tx.TxMapper;
+import kr.co.bitcamp.mappers.TxMapper;
 
 @Component("manager")
 public class UserProxy extends Proxy {
