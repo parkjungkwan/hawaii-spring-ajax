@@ -17,7 +17,7 @@ public class PersonServiceImpl implements PersonService{
 	
 	public Person findPersonForAccess(Person person) {
 		logger.info(person.toString());
-		return personMapper.selectOneFromPersons(person);
+		return personMapper.selectUserByIdPw(person);
 	}
 
 }
