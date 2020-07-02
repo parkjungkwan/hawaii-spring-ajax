@@ -23,6 +23,36 @@
 		http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-4.3.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
-		
-		</beans>
+	<!-- properties file 정보 -->    
+    <context:property-placeholder location="classpath:config/junit.properties"  />
+        
+    <!-- StringPrinter 클래스를 bean으로 등록-->
+    <bean id="stringPrinter" class="devjjo.junit.dto.before.StringPrinter" />
+    
+    <!-- ConsolPrinter 클래스를 bean으로 등록 -->
+    <bean id="consolePrinter" class="devjjo.junit.dto.before.ConsolePrinter" />
+    
+    <!-- Hello 클래스를 bean으로 등록 첫번째방법 -->
+    <bean id="helloPrinter" class="devjjo.junit.dto.before.Hello" >
+        <!-- setter injection 설정 -->
+        <property name="name" value ="조성훈"/>
+        <property name="printer" ref ="stringPrinter"/>
+    </bean>
+    
+    <!-- Hello 클래스를 bean으로 등록 두번째방법 -->
+    <bean id="helloC" class="devjjo.junit.dto.before.Hello" >
+        <!-- constructor injection 설정 -->
+        <constructor-arg index="0" value="${name}"/>
+        <constructor-arg index="1" ref="consolePrinter"/>
+        <property name="names">
+            <list>
+                <value>${value1}</value>
+                <value>${value2}</value>
+                <value>${value3}</value>
+            </list>
+        </property> 
+ 
+    </bean>
+    		
+</beans>
 		
