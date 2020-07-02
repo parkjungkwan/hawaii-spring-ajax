@@ -1,9 +1,12 @@
 package kr.co.bitcamp.proxies;
 import lombok.Data;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 @Data
 @Component
 public class Pager {
+	@Autowired UserProxy manager;
     private int rowCount, pageCount, blockCount,
                 rowStart, pageStart, prevBlock,
                 rowEnd, pageEnd, nextBlock,
@@ -12,6 +15,7 @@ public class Pager {
     private boolean existPrev, existNext;
     private String searchWord;
     public void paging(){
+    	
         rowCount = 0;
         rowStart = pageNow * pageSize;
         rowEnd = (pageNow != (pageCount -1)) ? rowStart + (pageSize-1): rowCount - 1;

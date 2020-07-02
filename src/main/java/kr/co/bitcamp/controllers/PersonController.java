@@ -31,8 +31,9 @@ public class PersonController {
 		return Messenger.SUCCESS; 
 	}
 	
-	@PostMapping("/users")
-	public Person login(HttpSession session, @RequestBody Person person) {
+	@PostMapping("/users/{userid}")
+	public Person login(HttpSession session, @RequestBody Person person,
+			@PathVariable String userid) {
 		Person returnPerson = personService.findByUseridAndPassword(person);
 		session.setAttribute("session", returnPerson);
 		return returnPerson; 

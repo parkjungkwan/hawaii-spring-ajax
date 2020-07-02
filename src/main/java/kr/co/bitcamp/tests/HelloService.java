@@ -10,6 +10,6 @@ package kr.co.bitcamp.tests;
  * @작성자 : pakjkwan@gmail.com
  * @see : junit 테스트 인터페이스
  */
-public interface Printer {
+public interface HelloService {
 	public void print(String message);
 }
