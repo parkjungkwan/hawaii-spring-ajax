@@ -7,6 +7,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.SessionAttributes;
+
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import kr.co.bitcamp.domains.Person;
@@ -15,6 +19,7 @@ import kr.co.bitcamp.services.PersonService;
 
 @RestController
 @RequestMapping("/person")
+@SessionAttributes({"session"})
 public class PersonController {
 	@Autowired
 	PersonService personService;
@@ -24,6 +29,13 @@ public class PersonController {
 	public Messenger join(@RequestBody Person person) {
 		System.out.println("넘어온 회원 정보 "+person.toString());
 		return Messenger.SUCCESS; 
+	}
+	
+	@PostMapping("/users")
+	public Person login(HttpSession session, @RequestBody Person person) {
+		Person returnPerson = personService.findByUseridAndPassword(person);
+		session.setAttribute("session", returnPerson);
+		return returnPerson; 
 	}
 	
 

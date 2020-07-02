@@ -14,8 +14,8 @@ import kr.co.bitcamp.mappers.PersonMapper;
 @Service
 public class PersonServiceImpl implements PersonService{
 	private static final Logger logger = LoggerFactory.getLogger(PersonServiceImpl.class);
-	@Autowired
-	PersonMapper personMapper;
+	@Autowired PersonMapper personMapper;
+	@Autowired Person person;
 	/* (non-Javadoc)
 	 * @see kr.co.bitcamp.services.PersonService#save()
 	 */
@@ -68,9 +68,8 @@ public class PersonServiceImpl implements PersonService{
 	 * @see kr.co.bitcamp.services.PersonService#findByEmailAndUserId(java.lang.String, java.lang.String)
 	 */
 	@Override
-	public void findByEmailAndUserId(String email, String userId) {
-		// TODO Auto-generated method stub
-		
+	public Person findByUseridAndPassword(Person param){
+		return personMapper.selectByUseridAndPassword(param);
 	}
 	/* (non-Javadoc)
 	 * @see kr.co.bitcamp.services.PersonService#findByEmailOrUserId(java.lang.String, java.lang.String)

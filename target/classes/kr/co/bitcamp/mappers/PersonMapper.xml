@@ -9,5 +9,10 @@
   <select id="createDB" parameterType="hashMap">
   	${CREATE_DB}
   </select>
+  <select id="selectByUseridAndPassword"
+  	resultType="kr.co.bitcamp.domains.Person"
+   	parameterType="kr.co.bitcamp.domains.Person">
+  	
+  </select>
  
 </mapper>

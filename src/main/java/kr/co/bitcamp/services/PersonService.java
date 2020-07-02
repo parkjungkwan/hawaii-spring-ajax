@@ -12,7 +12,7 @@ public interface PersonService {
 	 public void findAll();	
 	 public void count();
 	 public void delete();
-	 public void findByEmailAndUserId(String email, String userId);
+	 public Person findByUseridAndPassword(Person person);
 	 public void findByEmailOrUserId(String email, String userId);
 	 public void findByCreatedAtBetween(Date fromDate, Date toDate);
 	 public void findByAgeGraterThanEqual(int age);
