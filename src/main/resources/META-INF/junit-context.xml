@@ -26,11 +26,5 @@
     
     
     
-    <bean id="consolePrinter" class="kr.co.bitcamp.tests.HelloServiceImpl" />
-    
-    <bean id="hello" class="kr.co.bitcamp.tests.Hello" >
-        <property name="name" value ="조성훈"/>
-    </bean>
-    
 </beans>
 		
