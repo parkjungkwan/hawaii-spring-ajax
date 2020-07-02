@@ -216,6 +216,11 @@
 			<version>4.7</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring-version}</version>
+        </dependency>
 		<!-- Root -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
@@ -257,7 +262,7 @@
 		    <groupId>org.mariadb.jdbc</groupId>
 		    <artifactId>mariadb-java-client</artifactId>
 		    <version>2.6.1</version>
-		</dependency>
+		</dependency>                                                                                                                                                                                                                                                                                                                                    
 
 	</dependencies>
 	<build>

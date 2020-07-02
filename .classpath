@@ -25,6 +25,7 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/bit/eGov-3.9/eclipse/lombok.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/bit/eGov-3.9/eclipse/lombok.jar"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
