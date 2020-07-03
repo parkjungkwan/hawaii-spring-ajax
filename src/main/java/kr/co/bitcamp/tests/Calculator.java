@@ -6,7 +6,6 @@ package kr.co.bitcamp.tests;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
 import kr.co.bitcamp.proxies.Box;
 
 /**

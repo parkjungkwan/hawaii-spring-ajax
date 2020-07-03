@@ -36,12 +36,12 @@ import static org.hamcrest.Matchers.instanceOf;
 public class CalculatorTest {
 	@Autowired Calculator mock;
 
-	@Test
+	@Ignore
 	public void testSum() {
 		assertThat(mock.sum(1, 1), equalTo(2));
 	}
 
-	@Ignore
+	@Test
 	public void testSubstract() {
 		assertThat(mock.substract(1, 1), equalTo(0));
 	}
