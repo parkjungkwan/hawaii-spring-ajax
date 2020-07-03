@@ -27,5 +27,16 @@
 	</classpathentry>
 	<classpathentry exported="true" kind="lib" path="C:/Users/bit/eGov-3.9/eclipse/lombok.jar"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/bit/.m2/repository/org/mockito/mockito-all/1.10.19/mockito-all-1.10.19.jar" sourcepath="C:/Users/bit/.m2/repository/org/mockito/mockito-all/1.10.19/mockito-all-1.10.19-sources.jar">
+		<attributes>
+			<attribute name="test" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+			<attribute name="maven.groupId" value="org.mockito"/>
+			<attribute name="maven.artifactId" value="mockito-all"/>
+			<attribute name="maven.version" value="1.10.19"/>
+			<attribute name="maven.scope" value="test"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

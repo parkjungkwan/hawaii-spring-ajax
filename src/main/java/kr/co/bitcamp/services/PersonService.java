@@ -1,6 +1,7 @@
 package kr.co.bitcamp.services;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.stereotype.Component;
 import kr.co.bitcamp.domains.Person;
@@ -9,7 +10,7 @@ public interface PersonService {
 	 public void save();
 	 public void update();
 	 public void findOne();
-	 public void findAll();	
+	 public List<Person> findAll();	
 	 public void count();
 	 public void delete();
 	 public Person findByUseridAndPassword(Person person);

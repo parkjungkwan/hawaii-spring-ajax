@@ -14,5 +14,10 @@
    	parameterType="kr.co.bitcamp.domains.Person">
   	
   </select>
+  <select id="selectAll"
+  	resultType="kr.co.bitcamp.domains.Person">
+  	select * from persons
+  </select>
+  
  
 </mapper>

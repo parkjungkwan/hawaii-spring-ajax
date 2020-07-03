@@ -1,6 +1,7 @@
 package kr.co.bitcamp.services;
 
 import java.util.Date;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -44,9 +45,8 @@ public class PersonServiceImpl implements PersonService{
 	 * @see kr.co.bitcamp.services.PersonService#findAll()
 	 */
 	@Override
-	public void findAll() {
-		// TODO Auto-generated method stub
-		
+	public List<Person> findAll() {
+		return personMapper.selectAll();
 	}
 	/* (non-Javadoc)
 	 * @see kr.co.bitcamp.services.PersonService#count()
